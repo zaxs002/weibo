@@ -1,0 +1,27 @@
+<script>
+    $(document).ready(function(){
+        $("textarea").bind("keypress",function(e){
+            var char = String.fromCharCode(e.which);
+            if (char == "@")
+                $.get("at",function(data){
+                    var rs = data.split("-");
+                    for(var i=0;i<rs.length;i++)
+                    {
+                        $("#d1").append("<a href=" + "'<script" + ">" + "alert(fds)" + "<" + "/script>'>" + rs[i] + "</a><br/>");
+                    }
+                });
+        });
+        $("#p1").click(function(){
+            alert("fd");
+        });
+    });
+</script>
+
+<%= form_for(@micropost) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Compose new micropost...",class:'t3' %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <div id="d1"></div>
+<% end %>

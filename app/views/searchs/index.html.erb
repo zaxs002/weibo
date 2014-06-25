@@ -1,0 +1,19 @@
+<table>
+  <thead>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+  </tr>
+  </thead>
+
+  <tbody id="c1">
+    <% @rs.each do |x| %>
+        <tr>
+          <td><%= x.content %></td>
+          <td><%= x.user_id %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

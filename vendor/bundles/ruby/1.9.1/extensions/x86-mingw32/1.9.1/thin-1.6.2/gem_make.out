@@ -1,0 +1,23 @@
+C:/RailsInstaller/Ruby1.9.3/bin/ruby.exe extconf.rb 
+checking for main() in -lc... no
+creating Makefile
+
+make  clean
+
+make
+generating thin_parser-i386-mingw32.def
+compiling parser.c
+compiling thin.c
+thin.c: In function 'Thin_HttpParser_alloc':
+thin.c:242:3: warning: implicit declaration of function 'thin_http_parser_init'
+thin.c: In function 'Thin_HttpParser_finish':
+thin.c:294:3: warning: implicit declaration of function 'thin_http_parser_finish'
+thin.c:296:3: warning: implicit declaration of function 'thin_http_parser_is_finished'
+thin.c: In function 'Thin_HttpParser_execute':
+thin.c:334:5: warning: implicit declaration of function 'thin_http_parser_execute'
+thin.c:338:5: warning: implicit declaration of function 'thin_http_parser_has_error'
+linking shared-object thin_parser.so
+
+make  install
+/usr/bin/install -c -m 0755 thin_parser.so C:/Sites/work/weibo/vendor/bundles/ruby/1.9.1/gems/thin-1.6.2/ext/thin_parser/.gem.20140619-2064-5tltji
+installing default thin_parser libraries
